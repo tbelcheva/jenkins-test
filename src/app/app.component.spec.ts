@@ -26,6 +26,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toEqual('Welcome to TestPhantomJS!');
+    expect(compiled.querySelector('h1').innerText).toEqual('Welcome to TestPhantomJS!');
   });
 });
