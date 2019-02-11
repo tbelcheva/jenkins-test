@@ -11,6 +11,7 @@ module.exports = function (config) {
       require('karma-phantomjs-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
+      require('karma-htmlfile-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -21,7 +22,10 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'junit', 'html'],
+    htmlReporter: {
+      outputFile: 'tests/units.html'
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
