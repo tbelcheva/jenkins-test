@@ -1,2 +1,4 @@
-FROM node
-RUN ls
+FROM node:latest
+WORKDIR /usr/src/app
+RUN npm install
+EXPOSE 8080
